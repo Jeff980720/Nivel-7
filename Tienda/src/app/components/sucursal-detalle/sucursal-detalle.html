@@ -1,0 +1,35 @@
+<h3 class="text-center">Sucursales</h3>
+<div class="card my-4">
+    @for (sucursal of sucursales; track $index) {
+    <ul class="list-group">
+        <li class="list-group-item">
+            <strong> ID:</strong> {{sucursal.id}}
+        </li>
+        <li class="list-group-item">
+            <strong> Nombre:</strong> {{sucursal.nombre}}
+        </li>
+        <li class="list-group-item">
+            <strong> Direccion:</strong> {{sucursal.direccion.ciudad}}
+            {{sucursal.direccion.callePrincipal}}
+            {{sucursal.direccion.calleSecundaria}} / {{sucursal.direccion.numero}}
+        </li>
+        <li class="list-group-item text-center">
+            <strong> Productos</strong>
+        </li>
+    </ul>
+    <table class="table table-striped tabla-equi">
+        <thead>
+            <th class="col-equi">ID-PRODUCTO</th>
+            <th class="col-equi">NOMBRE</th>
+            <th class="col-equi">CATEGORIA</th>
+            <th class="col-equi">PRECIO</th>
+            <th class="col-equi">CANTIDAD</th>
+        </thead>
+        <tbody>
+            @for (item of sucursal.productosItem; track $index) {
+            <tr sucursal-items [item]="item"></tr>
+            }
+        </tbody>
+    </table>
+    }
+</div>

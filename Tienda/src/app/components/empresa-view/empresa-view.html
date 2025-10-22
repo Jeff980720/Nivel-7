@@ -1,0 +1,18 @@
+<div class="text-center">
+    <h3>Empresa</h3>
+</div>
+<div>
+    <ul class="list-group">
+        <li class="list-group-item">
+            <strong> Ruc: </strong>{{empresa.ruc}}
+        </li>
+        <li class="list-group-item">
+            <strong> Nombre:</strong> {{empresa.nombre}}
+        </li>
+        <li class="list-group-item">
+            <strong> Direccion:</strong> {{empresa.direccion.ciudad}}
+            {{empresa.direccion.callePrincipal}}
+            {{empresa.direccion.calleSecundaria}} / {{empresa.direccion.numero}}
+        </li>
+    </ul>
+</div>

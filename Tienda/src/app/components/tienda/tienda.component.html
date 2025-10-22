@@ -1,0 +1,68 @@
+<!-- <div class="container">
+    <div class="card my-5 bg-success text-white">
+        <div class="card-header">
+            <div class="text-center">
+                <h3>Empresa</h3>
+            </div>
+            <div>
+                <ul class="list-group">
+                    <li class="list-group-item">Ruc: {{tienda.empresa.ruc}}</li>
+                    <li class="list-group-item">Nombre: {{tienda.empresa.nombre}}</li>
+                    <li class="list-group-item">Direccion: {{tienda.empresa.direccion.ciudad}}
+                        {{tienda.empresa.direccion.callePrincipal}}
+                        {{tienda.empresa.direccion.calleSecundaria}} / {{tienda.empresa.direccion.numero}}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="card-body">
+            <h3 class="text-center">Sucursales</h3>
+            <div class="card my-4">
+                @for (sucursal of tienda.sucursales; track $index) {
+                <ul class="list-group">
+                    <li class="list-group-item">ID: {{sucursal.id}}</li>
+                    <li class="list-group-item">Nombre: {{sucursal.nombre}}</li>
+                    <li class="list-group-item">Direccion: {{sucursal.direccion.ciudad}}
+                        {{sucursal.direccion.callePrincipal}}
+                        {{sucursal.direccion.calleSecundaria}} / {{sucursal.direccion.numero}}</li>
+                </ul>
+                <table>
+                    <thead>
+                        <th>ID</th>
+                        <th>NOMBRE</th>
+                        <th>DESCRIPCION</th>
+                        <th>PRECIO</th>
+                        <th>CANTIDAD</th>
+                    </thead>
+                    <tbody>
+                        @for (item of sucursal.productosItem; track $index) {
+                        <tr>
+                            <td>{{item.product.id}}</td>
+                            <td>{{item.product.nombre}}</td>
+                            <td>{{item.product.descripcion}}</td>
+                            <td>{{item.product.precio}}</td>
+                            <td>{{item.cantidad}}</td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+                }
+            </div>
+            <div>
+                <h2>Total de Stock de las sucursales: {{totalStock}} </h2>
+            </div>
+        </div>
+    </div>
+</div> -->
+<div class="container">
+    <div class="card my-5 bg-success text-white">
+        <div class="card-header">
+           <empresa-view [empresa]="tienda.empresa"></empresa-view>
+        </div>
+        <div class="card-body">
+           <sucursal-detalle [sucursales]="tienda.sucursales"></sucursal-detalle>
+            <div>
+                <h2>Total de stock de las sucursales: {{totalStock}} productos</h2>
+            </div>
+        </div>
+    </div>
+</div>
