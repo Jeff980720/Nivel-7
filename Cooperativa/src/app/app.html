@@ -1,0 +1,45 @@
+<!-- 
+  Este es tu componente "Shell" o "App" principal.
+  Reemplaza el contenido de tu app.component.html con esto.
+-->
+<div class="flex flex-col min-h-screen bg-gray-900 text-gray-100">
+  
+  <!-- BARRA DE NAVEGACIÓN FIJA -->
+  <nav class="bg-gray-800 p-4 shadow-lg sticky top-0 z-10">
+    <div class="container mx-auto flex justify-center space-x-6">
+      <!-- 
+        routerLink="/inicio" es el enlace de navegación.
+        routerLinkActive="active-link" aplica una clase CSS cuando este enlace está activo.
+      -->
+      <a 
+        routerLink="/inicio" 
+        routerLinkActive="active-link"
+        class="nav-button">
+        Inicio
+      </a>
+      
+      <a 
+        routerLink="/socios" 
+        routerLinkActive="active-link"
+        class="nav-button">
+        Socios
+      </a>
+    </div>
+  </nav>
+
+  <!-- ÁREA DE CONTENIDO PRINCIPAL -->
+  <main class="container mx-auto p-6 flex-grow">
+    <!-- 
+      ¡ESTA ES LA PARTE MÁS IMPORTANTE!
+      Aquí es donde Angular cargará dinámicamente tu
+      InicioComponent o SociosComponent, basado en la URL.
+    -->
+    <router-outlet></router-outlet>
+  </main>
+
+  <!-- Pie de página (opcional) -->
+  <footer class="bg-gray-800 p-4 text-center text-gray-500">
+    Coopertiva Familia Unida © 2025
+  </footer>
+
+</div>

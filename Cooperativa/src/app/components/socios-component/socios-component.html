@@ -1,0 +1,37 @@
+<h1 class="text-center font-bold text-2xl mb-4">Lista de socios {{cooperativa.nombre}}</h1>
+<div class="flex space-x-4">
+    <button (click)="irAAgregarSocio()" class="btn-agregar">➕ Agregar socio
+    </button>
+    <button (click)="irAAgregarAporte()" class="btn-agregar">➕ Agregar aporte
+    </button>
+</div>
+<table class="table table-striped tabla-equi">
+    <thead>
+        <tr>
+            <th class="py-2 px-4 border-b col-equi">ID</th>
+            <th class="py-2 px-4 border-b col-equi">Nombre</th>
+            <th class="py-2 px-4 border-b col-equi">Aportado</th>
+            <th class="py-2 px-4 border-b col-equi">Monto Prestado</th>
+            <th class="py-2 px-4 border-b col-equi">Monto Pagado</th>
+            <th class="py-2 px-4 border-b col-equi">Monto Pendiente</th>
+            <th class="py-2 px-4 border-b col-equi">Interes Prestado</th>
+            <th class="py-2 px-4 border-b col-equi">Interes Pagado</th>
+            <th class="py-2 px-4 border-b col-equi">Interes Pendiente</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (item of cooperativa.items; track $index) {
+        <tr>
+            <td style="text-align: center;">{{item.id}}</td>
+            <td style="text-align: start;">{{item.nombre}}</td>
+            <td style="text-align: center;">{{item.aportado}}</td>
+            <td style="text-align: center;">{{item.montoprestado}}</td>
+            <td style="text-align: center;">{{item.montopagado}}</td>
+            <td style="text-align: center;">{{item.montopendiente}}</td>
+            <td style="text-align: center;">{{item.interesprestado}}</td>
+            <td style="text-align: center;">{{item.interespagado}}</td>
+            <td style="text-align: center;">{{item.interespendiente}}</td>
+        </tr>
+        }
+    </tbody>
+</table>

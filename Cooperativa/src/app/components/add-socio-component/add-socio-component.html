@@ -1,0 +1,23 @@
+<div class="form-container">
+    <h2 class="text-center font-bold text-2xl mb-4">Agregar Nuevo Socio</h2>
+    <form>
+        <div class="mb-4">
+            <label for="id" class="block text-withe-800 font-bold mb-2">Id:</label>
+            <input type="number" id="nombre" name="nombre" class="w-full p-2 border border-gray-300 rounded text-black"
+                [(ngModel)]="socio.aportado" (input)="validarDigitos($event)" />
+        </div>
+        <div class="mb-4">
+            <label for="nombre" class="block text-withe-800 font-bold mb-2">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" class="w-full p-2 border border-gray-300 rounded text-black" />
+        </div>
+        <div class="mb-4">
+            <label for="aportado" class="block text-withe-700 font-bold mb-2">Aportado:</label>
+            <input type="text" id="aportado" name="aportado"
+                class="w-full p-2 border border-gray-300 rounded text-black" value="00.00$" disabled />
+        </div>
+
+        <div class="flex justify-center">
+            <button type="submit" class="btn-agregar">Agregar Socio</button>
+        </div>
+
+    </form>

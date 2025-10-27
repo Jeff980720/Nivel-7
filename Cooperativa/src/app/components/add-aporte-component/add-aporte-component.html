@@ -1,0 +1,47 @@
+<div class="form-container">
+    <h2 class="text-center font-bold text-2xl mb-4">Agregar Nuevo Aporte del Socio</h2>
+    <form>
+        <div class="mb-4">
+            <label for="id-aporte" class="block text-withe-800 font-bold mb-2">Numero de Aporte:</label>
+            <input type="text" id="num-aporte" name="num-aporte"
+                class="w-full p-2 border border-gray-300 rounded text-black" disabled />
+        </div>
+        <div class="mb-4">
+            <label for="id-aporte" class="block text-withe-800 font-bold mb-2">Fecha de Aporte:</label>
+            <input type="date" id="fecha-aporte" name="fecha-aporte"
+                class="w-full p-2 border border-gray-300 rounded text-black" />
+        </div>
+        <div class="mb-4">
+            <label for="id" class="block text-withe-800 font-bold mb-2">Id Socio:</label>
+            <input type="number" id="id-socio" name="id-socio"
+                class="w-full p-2 border border-gray-300 rounded text-black" disabled />
+        </div>
+        <!-- <div class="mb-4">
+            <label for="nombre" class="block text-withe-800 font-bold mb-2">Nombre Socio:</label>
+            <input type="text" id="nombre" name="nombre" class="w-full p-2 border border-gray-300 rounded text-black" />
+        </div> -->
+        <div class="mb-4">
+            <label for="nombre" class="block text-white font-bold mb-2">Nombre Socio:</label>
+            <select [(ngModel)]="socioSeleccionado" name="socios"
+                class="w-full p-2 border border-gray-300 rounded text-black">
+                <option *ngFor="let cliente of clientes" [value]="cliente.id">{{ cliente.nombre }}</option>
+            </select>
+        </div>
+
+        <div class="mb-4">
+            <label for="aportado" class="block text-withe-700 font-bold mb-2">Aportado:</label>
+            <input type="number" id="aportado" name="aportado"
+                class="w-full p-2 border border-gray-300 rounded text-black" />
+        </div>
+
+        <div class="mb-4">
+            <label for="nombre" class="block text-withe-800 font-bold mb-2">Comentario:</label>
+            <input type="text" id="comentario" name="comentario"
+                class="w-full p-2 border border-gray-300 rounded text-black" />
+        </div>
+
+        <div class="flex justify-center">
+            <button type="submit" class="btn-agregar">Agregar Socio</button>
+        </div>
+
+    </form>
