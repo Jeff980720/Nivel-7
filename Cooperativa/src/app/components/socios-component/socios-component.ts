@@ -24,6 +24,17 @@ export class SociosComponent implements OnInit {
     this.router.navigate(['/aportes']);
   }
 
+  irAAgregarPagos(): void {
+    this.router.navigate(['/pagos']);
+  }
+
+  irAAgregarPrestamos(): void {
+    this.router.navigate(['/prestamos']);
+  }
+
+  irAAgregarCaja(): void {
+    this.router.navigate(['/caja']);
+  }
 
   ngOnInit(): void {
     this.cooperativa = this.sociosService.getSocios();

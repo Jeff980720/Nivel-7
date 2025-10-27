@@ -1,4 +1,4 @@
-<div class="form-container">
+<!-- <div class="form-container">
     <h2 class="text-center font-bold text-2xl mb-4">Agregar Nuevo Aporte del Socio</h2>
     <form>
         <div class="mb-4">
@@ -16,10 +16,10 @@
             <input type="number" id="id-socio" name="id-socio"
                 class="w-full p-2 border border-gray-300 rounded text-black" disabled />
         </div>
-        <!-- <div class="mb-4">
+        <div class="mb-4">
             <label for="nombre" class="block text-withe-800 font-bold mb-2">Nombre Socio:</label>
             <input type="text" id="nombre" name="nombre" class="w-full p-2 border border-gray-300 rounded text-black" />
-        </div> -->
+        </div>
         <div class="mb-4">
             <label for="nombre" class="block text-white font-bold mb-2">Nombre Socio:</label>
             <select [(ngModel)]="socioSeleccionado" name="socios"
@@ -41,7 +41,84 @@
         </div>
 
         <div class="flex justify-center">
-            <button type="submit" class="btn-agregar">Agregar Socio</button>
+            <button type="submit" class="btn-agregar">Agregar Aporte</button>
         </div>
 
-    </form>
+    </form> -->
+<div>
+    <div class="card">
+        <h1>Agregar Nuevo Aporte del Socio</h1>
+
+        <form [formGroup]="aporteForm" (ngSubmit)="onSubmit()">
+
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Numero de Aporte:</mat-label>
+                <input matInput formControlName="numeroAporte">
+                <mat-error
+                    *ngIf="aporteForm.get('numeroAporte')?.hasError('required') && aporteForm.get('numeroAporte')?.touched">
+                    El número de aporte es obligatorio.
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Fecha de Aporte:</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="fechaAporte">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+                <mat-error
+                    *ngIf="aporteForm.get('fechaAporte')?.hasError('required') && aporteForm.get('fechaAporte')?.touched">
+                    La fecha es obligatoria.
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Id Socio:</mat-label>
+                <input type="text" placeholder="Buscar ID o Nombre del Socio" matInput formControlName="idSocio"
+                    [matAutocomplete]="autoSocio">
+
+                <mat-icon matSuffix>search</mat-icon>
+
+                <mat-autocomplete #autoSocio="matAutocomplete" [displayWith]="displaySocioFn"
+                    (optionSelected)="onSocioSelected($event)">
+
+                    <mat-option *ngFor="let option of filteredSocios | async" [value]="option">
+                        ({{option.id}}) {{option.nombre}}
+                    </mat-option>
+                </mat-autocomplete>
+
+                <mat-error
+                    *ngIf="aporteForm.get('idSocio')?.hasError('required') && aporteForm.get('idSocio')?.touched">
+                    Debe seleccionar un socio de la lista.
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Nombre Socio:</mat-label>
+                <input matInput formControlName="nombreSocio" readonly>
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Aportado:</mat-label>
+                <input matInput type="number" formControlName="aportado">
+                <mat-error *ngIf="aporteForm.get('aportado')?.hasError('min') && aporteForm.get('aportado')?.touched">
+                    El monto debe ser positivo.
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Comentario:</mat-label>
+                <textarea matInput formControlName="comentario"></textarea>
+            </mat-form-field>
+
+            <div class="flex space-x-4">
+                <button mat-raised-button color="primary" type="submit" [disabled]="aporteForm.invalid">
+                    Agregar Aporte
+                </button>
+                <button (click)="limpiarCampos()" mat-raised-button color="primary" type="submit">
+                    Limpiar
+                </button>
+                <button (click)="irASocio()" mat-raised-button color="primary" type="submit">
+                    Cancelar
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

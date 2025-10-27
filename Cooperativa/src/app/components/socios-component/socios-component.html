@@ -4,6 +4,12 @@
     </button>
     <button (click)="irAAgregarAporte()" class="btn-agregar">➕ Agregar aporte
     </button>
+    <button (click)="irAAgregarPagos()" class="btn-agregar">➕ Agregar pago
+    </button>
+    <button (click)="irAAgregarPrestamos()" class="btn-agregar">➕ Agregar prestamo
+    </button>
+    <button (click)="irAAgregarCaja()" class="btn-agregar">➕ Agregar caja
+    </button>
 </div>
 <table class="table table-striped tabla-equi">
     <thead>
@@ -22,15 +28,15 @@
     <tbody>
         @for (item of cooperativa.items; track $index) {
         <tr>
-            <td style="text-align: center;">{{item.id}}</td>
-            <td style="text-align: start;">{{item.nombre}}</td>
-            <td style="text-align: center;">{{item.aportado}}</td>
-            <td style="text-align: center;">{{item.montoprestado}}</td>
-            <td style="text-align: center;">{{item.montopagado}}</td>
-            <td style="text-align: center;">{{item.montopendiente}}</td>
-            <td style="text-align: center;">{{item.interesprestado}}</td>
-            <td style="text-align: center;">{{item.interespagado}}</td>
-            <td style="text-align: center;">{{item.interespendiente}}</td>
+            <td style="text-align: center;" class="py-2 px-4 border-b">{{item.id}}</td>
+            <td style="text-align: start;" class="py-2 px-4 border-b">{{item.nombre}}</td>
+            <td style="text-align: center;" class="py-2 px-4 border-b">{{item.aportado}}</td>
+            <td style="text-align: center;" class="py-2 px-4 border-b">{{item.montoprestado}}</td>
+            <td style="text-align: center;" class="py-2 px-4 border-b">{{item.montopagado}}</td>
+            <td style="text-align: center;" class="py-2 px-4 border-b">{{item.montopendiente}}</td>
+            <td style="text-align: center;" class="py-2 px-4 border-b">{{item.interesprestado}}</td>
+            <td style="text-align: center;" class="py-2 px-4 border-b">{{item.interespagado}}</td>
+            <td style="text-align: center;" class="py-2 px-4 border-b">{{item.interespendiente}}</td>
         </tr>
         }
     </tbody>
