@@ -50,7 +50,10 @@ export class AddSocioComponent {
           // REGLA: Obligatorio
           Validators.required,
           // REGLA: Mínimo 5 caracteres
-          Validators.minLength(5)
+          Validators.minLength(5),
+          // 💡 REGLA ADICIONAL: Solo ingresar letras (y espacios)
+          // El patrón /^[a-zA-Z\s]*$/ asegura que solo haya letras o espacios.
+          Validators.pattern(/^[a-zA-Z\s]*$/)
         ]
       ],
       // ... el resto de tus campos ...

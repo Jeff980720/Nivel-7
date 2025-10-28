@@ -22,6 +22,9 @@
             <mat-error *ngIf="addSocioForm.get('nombre')?.hasError('minlength') && addSocioForm.get('nombre')?.touched">
                 El nombre debe tener al menos 5 caracteres.
             </mat-error>
+            <mat-error *ngIf="addSocioForm.get('nombre')?.hasError('pattern') && addSocioForm.get('nombre')?.touched">
+                Solo ingresar letras.
+            </mat-error>
         </mat-form-field>
 
         <div class="mb-4">
