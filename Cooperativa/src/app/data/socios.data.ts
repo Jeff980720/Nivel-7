@@ -5,7 +5,7 @@ export const listaSocios: Coperativa = {
     items:
         [
             {
-                id: 1,
+                id: "01",
                 nombre: "Ingreso Socios",
                 aportado: 0,
                 montoprestado: 0,
@@ -16,7 +16,7 @@ export const listaSocios: Coperativa = {
                 interespendiente: 0
             },
             {
-                id: 2,
+                id: "02",
                 nombre: "Egreso Socios",
                 aportado: 0,
                 montoprestado: 0,
@@ -27,7 +27,7 @@ export const listaSocios: Coperativa = {
                 interespendiente: 0
             },
             {
-                id: 3,
+                id: '03',
                 nombre: "Teresa Vilca",
                 aportado: 0,
                 montoprestado: 0,
@@ -38,7 +38,7 @@ export const listaSocios: Coperativa = {
                 interespendiente: 0
             },
             {
-                id: 4,
+                id: '04',
                 nombre: "Cesar Toaquiza",
                 aportado: 0,
                 montoprestado: 0,
@@ -49,7 +49,7 @@ export const listaSocios: Coperativa = {
                 interespendiente: 0
             },
             {
-                id: 5,
+                id: '05',
                 nombre: "Ana Toaquiza",
                 aportado: 0,
                 montoprestado: 0,
@@ -60,7 +60,7 @@ export const listaSocios: Coperativa = {
                 interespendiente: 0
             },
             {
-                id: 6,
+                id: '06',
                 nombre: "Danny Almachi",
                 aportado: 0,
                 montoprestado: 0,
@@ -71,7 +71,7 @@ export const listaSocios: Coperativa = {
                 interespendiente: 0
             },
             {
-                id: 7,
+                id: '07',
                 nombre: "Marlene Toaquiza",
                 aportado: 0,
                 montoprestado: 0,
@@ -82,7 +82,7 @@ export const listaSocios: Coperativa = {
                 interespendiente: 0
             },
             {
-                id: 8,
+                id: '08',
                 nombre: "Segundo Guayata",
                 aportado: 0,
                 montoprestado: 0,
@@ -93,7 +93,7 @@ export const listaSocios: Coperativa = {
                 interespendiente: 0
             },
             {
-                id: 9,
+                id: '09',
                 nombre: "Mayra Toaquiza",
                 aportado: 0,
                 montoprestado: 0,
@@ -104,7 +104,7 @@ export const listaSocios: Coperativa = {
                 interespendiente: 0
             },
             {
-                id: 10,
+                id: '10',
                 nombre: "Marcial Chiliquinga",
                 aportado: 0,
                 montoprestado: 0,
@@ -115,7 +115,7 @@ export const listaSocios: Coperativa = {
                 interespendiente: 0
             },
             {
-                id: 11,
+                id: '11',
                 nombre: "Luis Toaquiza",
                 aportado: 0,
                 montoprestado: 0,
@@ -126,7 +126,7 @@ export const listaSocios: Coperativa = {
                 interespendiente: 0
             },
             {
-                id: 12,
+                id: '12',
                 nombre: "Diego Toaquiza",
                 aportado: 0,
                 montoprestado: 0,
@@ -137,7 +137,7 @@ export const listaSocios: Coperativa = {
                 interespendiente: 0
             },
             {
-                id: 13,
+                id: '13',
                 nombre: "Martha Jaque",
                 aportado: 0,
                 montoprestado: 0,
@@ -148,7 +148,7 @@ export const listaSocios: Coperativa = {
                 interespendiente: 0
             },
             {
-                id: 14,
+                id: '14',
                 nombre: "Rocio Toaquiza",
                 aportado: 0,
                 montoprestado: 0,
@@ -159,7 +159,7 @@ export const listaSocios: Coperativa = {
                 interespendiente: 0
             },
             {
-                id: 15,
+                id: '15',
                 nombre: "Guadalupe Toaquiza",
                 aportado: 0,
                 montoprestado: 0,
@@ -170,7 +170,7 @@ export const listaSocios: Coperativa = {
                 interespendiente: 0
             },
             {
-                id: 16,
+                id: '16',
                 nombre: "Jefferson Toaquiza",
                 aportado: 0,
                 montoprestado: 0,
@@ -181,7 +181,7 @@ export const listaSocios: Coperativa = {
                 interespendiente: 0
             },
             {
-                id: 17,
+                id: '17',
                 nombre: "Diana Toaquiza",
                 aportado: 0,
                 montoprestado: 0,
@@ -192,7 +192,7 @@ export const listaSocios: Coperativa = {
                 interespendiente: 0
             },
             {
-                id: 18,
+                id: '18',
                 nombre: "Cristian Chachalo",
                 aportado: 0,
                 montoprestado: 0,

@@ -1,1 +1,145 @@
-<p>add-pagos-component works!</p>
+<div class="form-container">
+    <h1 class="text-center">Agregar Nuevo Pago del Socio</h1>
+
+    <form [formGroup]="addPagosForm" (ngSubmit)="onSubmit()">
+        <div class="flex space-x-4">
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Numero de Pago:</mat-label>
+                <input matInput formControlName="idPagos">
+                <mat-error
+                    *ngIf="addPagosForm.get('idPagos')?.hasError('required') && addPagosForm.get('idPagos')?.touched">
+                    El campo es obligatorio.
+                </mat-error>
+                <mat-error
+                    *ngIf="addPagosForm.get('idPagos')?.hasError('maxlength') && addPagosForm.get('idPagos')?.touched">
+                    Solo acepta 4 caracteres.
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Id del Socio:</mat-label>
+                <input matInput formControlName="idSocios">
+                <mat-error
+                    *ngIf="addPagosForm.get('idSocios')?.hasError('required') && addPagosForm.get('idSocios')?.touched">
+                    El campo es obligatorio.
+                </mat-error>
+                <mat-error
+                    *ngIf="addPagosForm.get('idSocios')?.hasError('maxlength') && addPagosForm.get('idSocios')?.touched">
+                    Solo acepta 4 caracteres.
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Id del Prestamo:</mat-label>
+                <input matInput formControlName="idPrestamos">
+                <mat-error
+                    *ngIf="addPagosForm.get('idPrestamos')?.hasError('required') && addPagosForm.get('idPrestamos')?.touched">
+                    El campo es obligatorio.
+                </mat-error>
+                <mat-error
+                    *ngIf="addPagosForm.get('idPrestamos')?.hasError('maxlength') && addPagosForm.get('idPrestamos')?.touched">
+                    Solo acepta 4 caracteres.
+                </mat-error>
+            </mat-form-field>
+        </div>
+
+        <div class="flex space-x-4">
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Amotizacion:</mat-label>
+                <input matInput formControlName="amortizacion">
+                <mat-error
+                    *ngIf="addPagosForm.get('amortizacion')?.hasError('required') && addPagosForm.get('amortizacion')?.touched">
+                    El campo es obligatorio.
+                </mat-error>
+                <mat-error
+                    *ngIf="addPagosForm.get('amortizacion')?.hasError('pattern') && addPagosForm.get('amortizacion')?.touched">
+                    Solo numeros.
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Fecha de Amorizacion:</mat-label>
+                <input matInput [matDatepicker]="pickerAmortizacion" formControlName="fechaAmortizacion">
+                <mat-datepicker-toggle matSuffix [for]="pickerAmortizacion"></mat-datepicker-toggle>
+                <mat-datepicker #pickerAmortizacion></mat-datepicker>
+                <mat-error
+                    *ngIf="addPagosForm.get('fechaAmortizacion')?.hasError('required') && addPagosForm.get('fechaAmortizacion')?.touched">
+                    El campo es obligatorio.
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Numero de Amotizacion:</mat-label>
+                <input matInput formControlName="numAmortizacion">
+                <mat-error
+                    *ngIf="addPagosForm.get('numAmortizacion')?.hasError('required') && addPagosForm.get('numAmortizacion')?.touched">
+                    El campo es obligatorio.
+                </mat-error>
+                <mat-error
+                    *ngIf="addPagosForm.get('numAmortizacion')?.hasError('pattern') && addPagosForm.get('numAmortizacion')?.touched">
+                    Solo numeros.
+                </mat-error>
+            </mat-form-field>
+        </div>
+
+        <div class="flex space-x-4">
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Interes:</mat-label>
+                <input matInput formControlName="interes">
+                <mat-error
+                    *ngIf="addPagosForm.get('interes')?.hasError('required') && addPagosForm.get('interes')?.touched">
+                    El campo es obligatorio.
+                </mat-error>
+                <mat-error
+                    *ngIf="addPagosForm.get('interes')?.hasError('pattern') && addPagosForm.get('interes')?.touched">
+                    Solo Numeros.
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Fecha de Interes:</mat-label>
+                <input matInput [matDatepicker]="pickerInteres" formControlName="fechaInteres">
+                <mat-datepicker-toggle matSuffix [for]="pickerInteres"></mat-datepicker-toggle>
+                <mat-datepicker #pickerInteres></mat-datepicker>
+                <mat-error
+                    *ngIf="addPagosForm.get('fechaInteres')?.hasError('required') && addPagosForm.get('fechaInteres')?.touched">
+                    El campo es obligatorio.
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Numero de Interes:</mat-label>
+                <input matInput formControlName="numInteres">
+                <mat-error
+                    *ngIf="addPagosForm.get('numInteres')?.hasError('required') && addPagosForm.get('numInteres')?.touched">
+                    El campo es obligatorio.
+                </mat-error>
+                <mat-error
+                    *ngIf="addPagosForm.get('numInteres')?.hasError('pattern') && addPagosForm.get('numInteres')?.touched">
+                    Solo numeros.
+                </mat-error>
+            </mat-form-field>
+        </div>
+
+        <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Comentario:</mat-label>
+            <input matInput formControlName="comentario">
+            <mat-error
+                *ngIf="addPagosForm.get('comentario')?.hasError('required') && addPagosForm.get('comentario')?.touched">
+                El campo es obligatorio.
+            </mat-error>
+        </mat-form-field>
+
+        <div class="flex space-x-4">
+            <button mat-raised-button color="primary" type="submit" [disabled]="addPagosForm.invalid">
+                Agregar Aporte
+            </button>
+            <button (click)="limpiarCampos()" mat-raised-button color="primary" type="submit">
+                Limpiar
+            </button>
+            <button (click)="irASocio()" mat-raised-button color="primary" type="submit">
+                Cancelar
+            </button>
+        </div>
+    </form>
+</div>

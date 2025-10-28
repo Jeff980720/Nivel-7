@@ -1,5 +1,5 @@
 export class Socio{
-    id!: number;
+    id!: string;
     nombre!: string;
     aportado!: number;
     montoprestado!: number;

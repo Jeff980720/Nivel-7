@@ -119,7 +119,7 @@ export class AddAporteComponent implements OnInit {
       const nuevoAporte: Aporte = {
         // El ID de Aporte es probable que lo genere el backend, 
         // pero si necesitas enviarlo, aquí se incluye
-        idAporte: 0, // o algún valor temporal si el backend lo ignora
+        idAporte: "", // o algún valor temporal si el backend lo ignora
 
         // Campos directos
         fechaAporte: this.aporteForm.get('fechaAporte')!.value,
@@ -127,7 +127,7 @@ export class AddAporteComponent implements OnInit {
         comentario: this.aporteForm.get('comentario')!.value,
 
         // Extracción de ID y Nombre del socio seleccionado
-        idSocio: socioSeleccionado.id,
+        idSocio: socioSeleccionado.id as unknown as number,
         nombreSocio: socioSeleccionado.nombre
       };
 
