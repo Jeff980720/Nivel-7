@@ -3,6 +3,7 @@ import { SociosService } from '../../services/socios';
 import { CommonModule } from '@angular/common';
 import { Coperativa } from '../../models/Coperativa';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-socios-component',
@@ -12,42 +13,10 @@ import { Router } from '@angular/router';
   styleUrl: './socios-component.css',
 })
 
-// export class SociosComponent implements OnInit {
-//   cooperativa!: Coperativa;
-
-//   constructor(private sociosService: SociosService, private router: Router) { }
-
-//   irAAgregarSocio(): void {
-//     this.router.navigate(['/add-socio']);
-//   }
-
-//   irAAgregarAporte(): void {
-//     this.router.navigate(['/aportes']);
-//   }
-
-//   irAAgregarPagos(): void {
-//     this.router.navigate(['/pagos']);
-//   }
-
-//   irAAgregarPrestamos(): void {
-//     this.router.navigate(['/prestamos']);
-//   }
-
-//   irAAgregarCaja(): void {
-//     this.router.navigate(['/caja']);
-//   }
-
-//   ngOnInit(): void {
-//     this.cooperativa = this.sociosService.getSocios();
-//   }
-// }
-
 export class SociosComponent implements OnInit {
-
   cooperativa!: Coperativa;
-  // totalStock: number = 0;
 
-  constructor(private service: SociosService, private router: Router) { }
+  constructor(private sociosService: SociosService, private router: Router) { }
 
   irAAgregarSocio(): void {
     this.router.navigate(['/add-socio']);
@@ -70,16 +39,50 @@ export class SociosComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.service.getSocios().subscribe(
-      (data: Coperativa) => {
-        this.cooperativa = data;
-        console.log('Datos recibidos del backend:', data);
-
-      },
-      (error) => {
-        console.error('Error al obtener datos del backend:', error);
-        console.error('Asegúrate de que el backend esté en puerto 3000');
-      }
-    );
+    this.cooperativa = this.sociosService.getSocios();
   }
 }
+
+// export class SociosComponent implements OnInit {
+
+//   cooperativa!: Coperativa;
+//   // cooperativa!: Observable<Coperativa>;
+//   // totalStock: number = 0;
+
+//   constructor(private service: SociosService, private router: Router) { }
+
+//   irAAgregarSocio(): void {
+//     this.router.navigate(['/add-socio']);
+//   }
+
+//   irAAgregarAporte(): void {
+//     this.router.navigate(['/aportes']);
+//   }
+
+//   irAAgregarPagos(): void {
+//     this.router.navigate(['/pagos']);
+//   }
+
+//   irAAgregarPrestamos(): void {
+//     this.router.navigate(['/prestamos']);
+//   }
+
+//   irAAgregarCaja(): void {
+//     this.router.navigate(['/caja']);
+//   }
+
+//   ngOnInit(): void {
+//     this.service.getSocios().subscribe(
+//       (data: Coperativa) => {
+//         this.cooperativa = data;
+//         console.log('Datos recibidos del backend:', data);
+
+//       },
+//       (error) => {
+//         console.error('Error al obtener datos del backend:', error);
+//         console.error('Asegúrate de que el backend esté en puerto 3000');
+//       }
+//     );
+
+//   }
+// }

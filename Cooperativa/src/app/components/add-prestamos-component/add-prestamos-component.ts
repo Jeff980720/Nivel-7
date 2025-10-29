@@ -114,7 +114,7 @@ export class AddPrestamosComponent {
     // Llamar a la función que escuchará los cambios
     this.setupCalculationListener();
     // Carga la lista de socios
-    this.sociosService.getAllSocios().subscribe(data => {
+    this.sociosService.getAllSocios().subscribe(data => {//cambiado el getAllSocios
       this.sociosDisponibles = data;
     });
 

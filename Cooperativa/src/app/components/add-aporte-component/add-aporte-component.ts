@@ -74,7 +74,7 @@ export class AddAporteComponent implements OnInit {
 
   ngOnInit() {
     // Carga la lista de socios
-    this.sociosService.getAllSocios().subscribe(data => {
+    this.sociosService.getAllSocios().subscribe(data => {//cambiado antes getAllSocios
       this.sociosDisponibles = data;
     });
 
