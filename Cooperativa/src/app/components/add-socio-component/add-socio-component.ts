@@ -113,9 +113,9 @@ export class AddSocioComponent {
     // 2. Opcional: Re-aplicar valores iniciales si son dinámicos (como la fecha)
     // El método reset() normalmente revierte a los valores dados en el constructor.
     // Si quieres asegurar que la fecha vuelva a ser la de hoy:
-    this.addSocioForm.patchValue({
-      fechaAporte: new Date(),
-      aportado: 0
-    });
+    // this.addSocioForm.patchValue({
+    //   fechaAporte: new Date(),
+    //   aportado: 0
+    // });
   }
 }

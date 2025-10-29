@@ -1,1 +1,57 @@
-<p>caja-component works!</p>
+<div>
+    <!-- <div class="card"> -->
+    <h1 class="text-center">Agregar Nuevo Cierrer de Caja</h1>
+
+    <form [formGroup]="addCajaForm" (ngSubmit)="onSubmit()">
+
+        <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Id de Caja:</mat-label>
+            <input matInput formControlName="idCaja">
+            <mat-error *ngIf="addCajaForm.get('idCaja')?.hasError('required') && addCajaForm.get('idCaja')?.touched">
+                El campo es obligatorio.
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Fecha de Cierre:</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="fechaCaja">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            <mat-error
+                *ngIf="addCajaForm.get('fechaCaja')?.hasError('required') && addCajaForm.get('fechaCaja')?.touched">
+                La fecha es obligatoria.
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Monto:</mat-label>
+            <input matInput formControlName="efectivo">
+            <mat-error
+                *ngIf="addCajaForm.get('efectivo')?.hasError('required') && addCajaForm.get('efectivo')?.touched">
+                El campo es obligatorio.
+            </mat-error>
+            <mat-error
+                *ngIf="addCajaForm.get('efectivo')?.hasError('pattern') && addCajaForm.get('efectivo')?.touched">
+                Solo ingresar numeros.
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Comentario:</mat-label>
+            <textarea matInput formControlName="comentario"></textarea>
+        </mat-form-field>
+
+        <div class="flex space-x-4">
+            <button mat-raised-button color="primary" type="submit" [disabled]="addCajaForm.invalid">
+                Agregar Caja
+            </button>
+            <button (click)="limpiarCampos()" mat-raised-button color="primary" type="submit">
+                Limpiar
+            </button>
+            <button (click)="irASocio()" mat-raised-button color="primary" type="submit">
+                Cancelar
+            </button>
+        </div>
+    </form>
+    <!-- </div> -->
+</div>

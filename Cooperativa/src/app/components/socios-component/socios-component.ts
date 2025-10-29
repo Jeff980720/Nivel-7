@@ -11,10 +11,43 @@ import { Router } from '@angular/router';
   templateUrl: './socios-component.html',
   styleUrl: './socios-component.css',
 })
-export class SociosComponent implements OnInit {
-  cooperativa!: Coperativa;
 
-  constructor(private sociosService: SociosService, private router: Router) { }
+// export class SociosComponent implements OnInit {
+//   cooperativa!: Coperativa;
+
+//   constructor(private sociosService: SociosService, private router: Router) { }
+
+//   irAAgregarSocio(): void {
+//     this.router.navigate(['/add-socio']);
+//   }
+
+//   irAAgregarAporte(): void {
+//     this.router.navigate(['/aportes']);
+//   }
+
+//   irAAgregarPagos(): void {
+//     this.router.navigate(['/pagos']);
+//   }
+
+//   irAAgregarPrestamos(): void {
+//     this.router.navigate(['/prestamos']);
+//   }
+
+//   irAAgregarCaja(): void {
+//     this.router.navigate(['/caja']);
+//   }
+
+//   ngOnInit(): void {
+//     this.cooperativa = this.sociosService.getSocios();
+//   }
+// }
+
+export class SociosComponent implements OnInit {
+
+  cooperativa!: Coperativa;
+  // totalStock: number = 0;
+
+  constructor(private service: SociosService, private router: Router) { }
 
   irAAgregarSocio(): void {
     this.router.navigate(['/add-socio']);
@@ -37,6 +70,16 @@ export class SociosComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.cooperativa = this.sociosService.getSocios();
+    this.service.getSocios().subscribe(
+      (data: Coperativa) => {
+        this.cooperativa = data;
+        console.log('Datos recibidos del backend:', data);
+
+      },
+      (error) => {
+        console.error('Error al obtener datos del backend:', error);
+        console.error('Asegúrate de que el backend esté en puerto 3000');
+      }
+    );
   }
 }

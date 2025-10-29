@@ -3,7 +3,7 @@
   Reemplaza el contenido de tu app.component.html con esto.
 -->
 <div class="flex flex-col min-h-screen bg-gray-900 text-gray-100">
-  
+
   <!-- BARRA DE NAVEGACIÓN FIJA -->
   <nav class="bg-gray-800 p-4 shadow-lg sticky top-0 z-10">
     <div class="container mx-auto flex justify-center space-x-6">
@@ -11,19 +11,30 @@
         routerLink="/inicio" es el enlace de navegación.
         routerLinkActive="active-link" aplica una clase CSS cuando este enlace está activo.
       -->
-      <a 
-        routerLink="/inicio" 
-        routerLinkActive="active-link"
-        class="nav-button">
+      <a routerLink="/inicio" routerLinkActive="active-link" class="nav-button">
         Inicio
       </a>
-      
-      <a 
-        routerLink="/socios" 
-        routerLinkActive="active-link"
-        class="nav-button">
+
+      <a routerLink="/socios" routerLinkActive="active-link" class="nav-button">
         Socios
       </a>
+
+      <a routerLink="/listaportes" routerLinkActive="active-link" class="nav-button">
+        Lista Aportes
+      </a>
+
+      <a routerLink="/litaprestamos" routerLinkActive="active-link" class="nav-button">
+        Lista Prestamos
+      </a>
+
+      <a routerLink="/listapagos" routerLinkActive="active-link" class="nav-button">
+        Lista Pagos
+      </a>
+
+      <a routerLink="/listacaja" routerLinkActive="active-link" class="nav-button">
+        Lista Cierres de Caja
+      </a>
+
     </div>
   </nav>
 
